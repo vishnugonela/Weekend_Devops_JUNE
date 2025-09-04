@@ -1,0 +1,22 @@
+#!/bin/bash
+#condition
+#######file name:ift.sh#######
+a=$1
+b=$2
+if [ $a == $b ]
+then
+        if [ $a == $c]
+        then
+                echo "a,b,c are equal"
+        else
+                echo "only a,b are equal"
+        fi
+elif [ $b == $c ]
+then
+        echo "b,c are  equal"
+elif [ $a == $c ]
+then
+        echo "only a,c are equal"
+else
+        echo "a,b,c are  unique"
+fi
