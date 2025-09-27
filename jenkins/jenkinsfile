@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh '''
                       echo " Build is sucessful on stage2 "
-               bash ${WORKSPACE}/linux/if_Condition_Statments.sh 
+               bash ${WORKSPACE}/linux/if_Condition_statments.sh 
                    '''
             }
         }
