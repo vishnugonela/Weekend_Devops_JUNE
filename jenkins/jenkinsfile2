@@ -16,7 +16,7 @@ pipeline {
                 script {
                     sh '''
                         echo "Build is successful on stage 2"
-                        bash ${WORKSPACE}/linux/script.sh
+                        bash ${WORKSPACE}/linux/Script.sh
                     '''
                 }
             }
