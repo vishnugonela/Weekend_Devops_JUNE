@@ -8,9 +8,9 @@ hostname
 #
 #cat /etc/os-release
 #
-df -lh
+#df -lh
 #
-df -sh
+#df -sh
 #
 #top
 #
