@@ -1,0 +1,21 @@
+pipeline {
+agent any
+      stages {
+            stage('Listing Scripts') {
+                   steps {
+                          sh '''
+                              echo "Listing scripts from Github repo"
+                              ls ${WORKSPACE}/
+                              '''
+                    }
+                }
+              stage('Executing_Scripts') {
+                   steps {
+                          sh '''
+                               echo "Executing scripts from Github repo sucessfully"
+                              sh ${WORKSPACE}/linux/script.sh
+                              '''
+                     }
+                }
+           }
+      }
