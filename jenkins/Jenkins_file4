@@ -13,7 +13,7 @@ agent any
                    steps {
                           sh '''
                                echo "Executing scripts from Github repo sucessfully"
-                              sh ${WORKSPACE}/linux/if_Condition_statments.sh
+                              sh ${WORKSPACE}/linux/Script.sh
                               '''
                      }
                 }
