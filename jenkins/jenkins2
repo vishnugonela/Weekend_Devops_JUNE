@@ -1,0 +1,17 @@
+pipeline {
+    agent Node1
+    stages {
+        stage('1') {
+            steps {
+               echo 'project 1 to be executed...'
+            }
+        }
+        stage('2') {
+            steps {
+                echo 'project 2 to be executed...'
+            }
+        }
+        
+    }
+    
+}
