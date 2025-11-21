@@ -1,0 +1,31 @@
+pipeline {
+    agent by{
+        stage
+        stages('build'){
+            step{
+                sh '''echo "docker image building "
+                cd $(WORKSPACE)/docker/
+                docker build -t python-myapp:latest
+                '''
+            }
+        }
+        stages('tagging'){
+            step{
+                sh '''docker image tag python-myapp:latest 863983/python-myapp:latest
+                      docker log in -u 863983 -p hello@143#
+                      docker image push 863983/python-myapp:latest
+                      '''
+            }
+        }
+        stages('deploy'){
+            step{
+                sh ''' echo "docker deployements stage"
+                docker container run d --name container1 -p 8080:80 863983/python-myapp:latest
+                echo "validtaing image"
+                sleep 30
+                docker container ls grep | container1
+        }
+            }
+        }
+    }
+}
