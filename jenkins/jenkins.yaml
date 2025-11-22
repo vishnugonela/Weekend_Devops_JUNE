@@ -1,0 +1,42 @@
+jenkins:
+  systemMessage: "Configured via Code!"
+
+  securityRealm:
+    local:
+      allowsSignUp: false
+      users:
+        - id: "admin"
+          password: "admin"
+
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+
+unclassified:
+  location:
+    url: "http://localhost:8080/"
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              id: git-credentials
+              username: myuser
+              password: mypass
+
+jobs:
+  - script: >
+      pipelineJob('MyPipeline') {
+        definition {
+          cps {
+            script("""
+              pipeline {
+                agent any
+                stages {
+                  stage('Build') { steps { echo 'Hello World' } }
+                }
+              }
+            """)
+          }
+        }
+      }
